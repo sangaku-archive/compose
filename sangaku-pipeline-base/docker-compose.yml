@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+  pipeline:
+    image: gspinaci/sangaku-server-pipeline:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - shared_volume:/app
+    environment:
+      MONGO_URI: mongodb://mongodb
+      MONGO_COLLECTION: manifests
+      IMAGE_STORE_PATH: imgs/
+      MANIFEST_STORE_PATH: manifests/
+  mongodb:
+    image: mongo:6-jammy
+    ports:
+      - '27017:27017'
+    volumes:
+      - shared_volume:/app
+  cantaloupe:
+    image: orrisroot/cantaloupe
+    ports:
+      - "8182:8182"
+    volumes:
+      - shared_volume:/data
+
+volumes:
+  shared_volume:
