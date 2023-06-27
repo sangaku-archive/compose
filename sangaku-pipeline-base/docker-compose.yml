@@ -9,8 +9,9 @@ services:
     environment:
       MONGO_URI: mongodb://mongodb
       MONGO_COLLECTION: manifests
-      IMAGE_STORE_PATH: imgs/
+      IMAGE_STORE_PATH: data/
       MANIFEST_STORE_PATH: manifests/
+      BASE_URI: http://localhost
   mongodb:
     image: mongo:6-jammy
     ports:
@@ -22,7 +23,7 @@ services:
     ports:
       - "8182:8182"
     volumes:
-      - shared_volume:/data
+      - shared_volume:/app
 
 volumes:
   shared_volume:
