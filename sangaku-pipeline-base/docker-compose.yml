@@ -9,7 +9,7 @@ services:
     environment:
       MONGO_URI: mongodb://mongodb
       MONGO_COLLECTION: manifests
-      IMAGE_STORE_PATH: data/
+      IMAGE_STORE_PATH: imgs/
       MANIFEST_STORE_PATH: manifests/
       BASE_URI: http://localhost
   mongodb:
@@ -19,7 +19,7 @@ services:
     volumes:
       - shared_volume:/app
   cantaloupe:
-    image: orrisroot/cantaloupe
+    image: gspinaci/sangaku-server-cantaloupe:latest
     ports:
       - "8182:8182"
     volumes:
