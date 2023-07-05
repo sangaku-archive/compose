@@ -19,7 +19,7 @@ services:
     volumes:
       - shared_volume:/app
   cantaloupe:
-    image: gspinaci/sangaku-server-cantaloupe:linux-arm64
+    image: gspinaci/sangaku-server-cantaloupe:arm64
     ports:
       - "8182:8182"
     volumes:
