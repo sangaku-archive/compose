@@ -1,17 +1,6 @@
 version: '3.9'
 services:
-  pipeline:
-    image: gspinaci/sangaku-server-pipeline:amd64
-    ports:
-      - "8080:8080"
-    volumes:
-      - shared_volume:/app
-    environment:
-      MONGO_URI: mongodb://mongodb
-      MONGO_COLLECTION: manifests
-      IMAGE_STORE_PATH: imgs/
-      MANIFEST_STORE_PATH: manifests/
-      BASE_URI: http://52.87.174.207
+  
   mongodb:
     image: mongo:6-jammy
     ports:
