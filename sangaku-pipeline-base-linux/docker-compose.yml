@@ -7,6 +7,9 @@ services:
       - '27017:27017'
     volumes:
       - shared_volume:/app
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: 
+      MONGO_INITDB_ROOT_PASSWORD: 
   cantaloupe:
     image: gspinaci/sangaku-server-cantaloupe:amd64
     ports:
