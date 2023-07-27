@@ -1,25 +1,27 @@
 version: '3.9'
 services:
-  pipeline:
-    image: gspinaci/sangaku-server-pipeline:latest
+
+  nginx-proxy:
+    container_name: nginx-proxy
+    image: nginx:latest
     ports:
-      - "8080:8080"
+      - 80:80
     volumes:
-      - shared_volume:/app
-    environment:
-      MONGO_URI: mongodb://mongodb
-      MONGO_COLLECTION: manifests
-      IMAGE_STORE_PATH: imgs/
-      MANIFEST_STORE_PATH: manifests/
-      BASE_URI: http://localhost
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    network_mode: host
+
   mongodb:
     image: mongo:6-jammy
     ports:
       - '27017:27017'
     volumes:
       - shared_volume:/app
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: 
+      MONGO_INITDB_ROOT_PASSWORD: 
+    
   cantaloupe:
-    image: gspinaci/sangaku-server-cantaloupe:latest
+    image: gspinaci/sangaku-server-cantaloupe:amd64
     ports:
       - "8182:8182"
     volumes:
