@@ -8,23 +8,20 @@ services:
       - 80:80
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
+    network_mode: host
 
   mongodb:
     image: mongo:6-jammy
+    depends_on:
+      - nginx-proxy
     ports:
-      - '27017:27017'
+      - 127.0.0.1:27017:27017
     volumes:
       - shared_volume:/app
     environment:
       MONGO_INITDB_ROOT_USERNAME: 
       MONGO_INITDB_ROOT_PASSWORD: 
-    
-  cantaloupe:
-    image: gspinaci/sangaku-server-cantaloupe:amd64
-    ports:
-      - "8182:8182"
-    volumes:
-      - shared_volume:/app
+
 
 volumes:
   shared_volume:
