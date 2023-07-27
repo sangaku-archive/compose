@@ -12,8 +12,6 @@ services:
 
   mongodb:
     image: mongo:6-jammy
-    depends_on:
-      - nginx-proxy
     ports:
       - 127.0.0.1:27017:27017
     volumes:
