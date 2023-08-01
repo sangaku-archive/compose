@@ -27,8 +27,8 @@ services:
     ports:
       - 8182:8182
     volumes:
-      - ./data/cantaloupe.properties:/usr/local/cantaloupe/cantaloupe.properties
-      - ./data/images:/usr/local/cantaloupe/images
+      - ./data/cantaloupe.properties:/app/cantaloupe.properties
+      - ./data/images:/app/images
 
   base-server:
     container_name: base-server
