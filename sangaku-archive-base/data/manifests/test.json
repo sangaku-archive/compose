@@ -40,7 +40,7 @@
                 "type": "Image",
                 "format": "image/jpeg",
                 "service": {
-                  "id": "https://sangaku-archive.online/iiif/book1/page1",
+                  "id": "http://sangaku-archive.online/images/iiif/3/1a.jpeg",
                   "type": "ImageService3",
                   "profile": "level2",
                   "service": [
