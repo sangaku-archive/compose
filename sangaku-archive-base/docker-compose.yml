@@ -32,9 +32,11 @@ services:
 
   base-server:
     container_name: base-server
-    image: gspinaci/base:linux-amd64
+    image: gspinaci/sangaku-archive-server:linux-amd64
     ports:
       - 8080:8080
+    volumes:
+      - ./data/manifests:/app/manifests
 
 volumes:
   shared_volume:
