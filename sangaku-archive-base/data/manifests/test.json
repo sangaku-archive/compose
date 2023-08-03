@@ -42,13 +42,7 @@
                 "service": {
                   "id": "http://sangaku-archive.online/images/iiif/3/1a.jpeg",
                   "type": "ImageService3",
-                  "profile": "level2",
-                  "service": [
-                    {
-                      "@id": "https://example.org/iiif/auth/login",
-                      "@type": "AuthCookieService1"
-                    }
-                  ]
+                  "profile": "level2"
                 }
               }
             }
