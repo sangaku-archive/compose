@@ -44,7 +44,8 @@
                   "type": "ImageService3",
                   "profile": "level2"
                 }
-              }
+              },
+              "target": "https://example.org/iiif/book1/canvas/p1"
             }
           ]
         }
